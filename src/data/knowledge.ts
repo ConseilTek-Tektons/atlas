@@ -1,0 +1,7 @@
+import type { KnowledgeArticle } from "@/lib/assistant";
+export const knowledgeArticles: KnowledgeArticle[] = [
+  { id: "permission-search", title: "Permission-safe search", summary: "Atlas filters candidates through current page and space permissions before returning titles, counts, snippets, or AI context.", content: "Filtered candidates leave no observable trace. Elevated roles remain auditable and tenant boundaries are always applied first.", tags: ["permission", "search", "leak", "ranking"] },
+  { id: "page-history", title: "Page history", summary: "Every material edit creates an immutable numbered page version while the page record points to the current version.", content: "Restoring content creates a new version rather than deleting intervening history.", tags: ["page", "version", "history", "restore"] },
+  { id: "content-review", title: "Content review", summary: "Controlled pages identify an owner, reviewer, review status, and completion time before publishing.", content: "Overdue review signals do not hide or auto-publish content; they route accountable work to the owner.", tags: ["review", "owner", "publish", "governance"] },
+  { id: "ai-citations", title: "Knowledge answer citations", summary: "AI answers cite readable pages and refuse unsupported answers instead of filling gaps from general model knowledge.", content: "Permissions are checked again at retrieval time and immediately before response assembly.", tags: ["ai", "rag", "citation", "access"] },
+];

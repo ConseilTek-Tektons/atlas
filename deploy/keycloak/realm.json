@@ -1,0 +1,31 @@
+{
+  "realm": "atlas",
+  "enabled": true,
+  "displayName": "Atlas local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "atlas-web",
+      "name": "Atlas Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "atlas-owners" },
+    { "name": "atlas-admins" },
+    { "name": "knowledge-space-admins" },
+    { "name": "knowledge-editors" },
+    { "name": "knowledge-reviewers" },
+    { "name": "knowledge-readers" },
+    { "name": "knowledge-auditors" }
+  ]
+}

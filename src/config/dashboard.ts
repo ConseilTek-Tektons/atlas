@@ -1,0 +1,51 @@
+export type DashboardItem = { id: number; primary: string; secondary: string; tertiary: string; status: string; accent: "lime" | "violet" | "cyan" };
+type DashboardConfig = { eyebrow: string; heading: string; summary: string; primaryAction: string; secondaryAction: string; secondaryNotice: string; managePermission: string; metricLabel: string; metrics: { label: string; value: string; change: string; context: string; tone: "positive" | "warning"; progress: string }[]; trend: { label: string; value: number }[]; listTitle: string; workspaceAction: string; items: DashboardItem[]; sideTitle: string; sideSubtitle: string; sideItems: { title: string; detail: string; value: string; warning?: boolean }[]; insightTitle: string; insightBody: string; insightNotice: string; itemNoun: string; modalEyebrow: string; modalTitle: string; formFields: { name: string; label: string; placeholder: string }[]; defaultSecondary: string; defaultTertiary: string; newItemStatus: string; policyPreview: string; submitLabel: string };
+
+export const dashboard: DashboardConfig = {
+  eyebrow: "KNOWLEDGE WORKSPACE · VERIFIED ACCESS",
+  heading: "Useful knowledge, without permission leaks.",
+  summary: "Search candidates are always rechecked against live PostgreSQL permissions before a title, count, or answer is shown.",
+  primaryAction: "Create page",
+  secondaryAction: "Search knowledge",
+  secondaryNotice: "Permission-aware search opened across the spaces you can read.",
+  managePermission: "pages.manage",
+  metricLabel: "Knowledge health",
+  metrics: [
+    { label: "Pages viewed", value: "18.4k", change: "↗ 14%", context: "this month", tone: "positive", progress: "88%" },
+    { label: "Search success", value: "84%", change: "6% refined", context: "after first query", tone: "positive", progress: "84%" },
+    { label: "Review overdue", value: "27", change: "9 owners", context: "notified today", tone: "warning", progress: "31%" },
+    { label: "Access checks", value: "100%", change: "0 leaks", context: "in audit sample", tone: "positive", progress: "100%" },
+  ],
+  trend: [44, 52, 47, 63, 71, 68, 82].map((value, index) => ({ label: String(index), value })),
+  listTitle: "Recently useful",
+  workspaceAction: "Open knowledge workspace",
+  items: [
+    { id: 1, primary: "Production release runbook", secondary: "Engineering", tertiary: "Reviewed today", status: "Current", accent: "lime" },
+    { id: 2, primary: "Enterprise SSO setup", secondary: "Customer operations", tertiary: "12 citations", status: "Current", accent: "cyan" },
+    { id: 3, primary: "Incident communication guide", secondary: "Reliability", tertiary: "Review overdue", status: "Review", accent: "violet" },
+    { id: 4, primary: "Data retention standard", secondary: "Security", tertiary: "Restricted space", status: "Current", accent: "lime" },
+  ],
+  sideTitle: "Space health",
+  sideSubtitle: "Ownership and review coverage",
+  sideItems: [
+    { title: "Engineering", detail: "96% pages owned", value: "Healthy" },
+    { title: "Customer operations", detail: "14 stale pages", value: "Review", warning: true },
+    { title: "Security", detail: "All reviews current", value: "100%" },
+  ],
+  insightTitle: "Two runbooks disagree on rollback.",
+  insightBody: "The release and incident runbooks cite different database rollback windows. Assigning one owner will remove ambiguity before the next deployment.",
+  insightNotice: "Conflicting passages opened side by side with permission checks preserved.",
+  itemNoun: "Page",
+  modalEyebrow: "NEW PAGE",
+  modalTitle: "Start a knowledge page",
+  formFields: [
+    { name: "title", label: "Page title", placeholder: "A clear, searchable title" },
+    { name: "space", label: "Space", placeholder: "Engineering" },
+    { name: "owner", label: "Owner", placeholder: "Knowledge operations" },
+  ],
+  defaultSecondary: "General",
+  defaultTertiary: "Unassigned owner",
+  newItemStatus: "Draft",
+  policyPreview: "The page inherits its space policy. Search, autocomplete, and AI answers will apply that policy before returning content.",
+  submitLabel: "Create page",
+};
