@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="public/brand/mark-light.png" alt="ConseilTek" width="120" />
+  <img src="public/brand/logo.png" alt="ConseilTek" width="180" />
   <h1>Atlas</h1>
   <p><strong>A knowledge base whose search respects permissions.</strong></p>
   <p>Spaces and versioned pages · review ownership · enterprise SSO · configurable RBAC · grounded AI</p>
 </div>
 
-[![CI](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/ci.yml) [![CodeQL](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/codeql.yml/badge.svg)](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/codeql.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-a3ff12)](LICENSE)
+[![CI](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/ci.yml) [![CodeQL](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/codeql.yml/badge.svg)](https://github.com/ConseilTek-Tektons/atlas/actions/workflows/codeql.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-222c62)](LICENSE)
 
 Atlas helps teams write, review, discover, and trust operating knowledge without leaking restricted page titles or AI context. Permissions are applied before search results, counts, snippets, or citations leave the server. This is a working deployment package: application, PostgreSQL schema, enterprise identity, tests, container, and two managed-cloud architectures.
 
